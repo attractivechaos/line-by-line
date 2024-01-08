@@ -7,7 +7,7 @@ hyperfine './lc-c < /tmp/test.txt'
 ```
 
 | Language | Runtime | Version | Elapsed time (s) | User time (s) | Sys time (s) | Code |
-|:---------|:--------|:--------|-----:|-----:|:-----------|
+|:---------|:--------|:--------|-----:|-----:|-----:|:-----------|
 |JavaScript| node    | 21.5.0  | 6.30 | 5.33 | 0.90 | [lc-node.js](lc-node.js) |
 |          | node    | 21.5.0  | 22.34| 20.41| 2.24 | [lc-n-readlines.js](lc-n-readlines.js) |
 |          | bun     | 1.0.20  | 4.91 | 5.30 | 1.47 | [lc-node.js](lc-node.js) |
