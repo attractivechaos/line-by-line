@@ -8,7 +8,8 @@ function* k8_readline(fn) {
 	buf.destroy();
 }
 
+const fn = arguments.length > 0? arguments[0] : "-";
 let n_line = 0, sum = 0;
-for (const line of k8_readline("-"))
+for (const line of k8_readline(fn))
 	++n_line, sum += line.length;
 print(`${n_line} ${sum}`);
