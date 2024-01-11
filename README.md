@@ -4,7 +4,9 @@ Pro with an Apple M1 CPU. The following command lines were used for timing:
 make   # compile line-gen and lc-c
 ./line-gen > /tmp/test.txt
 hyperfine './lc-c < /tmp/test.txt'
+time node paste-Dimava.js /tmp/test.txt /tmp/test.txt > /dev/null
 ```
+### Elapsed time for reading all lines
 
 | Language | Runtime | Version | Elapsed time (s) | User time (s) | Sys time (s) | Code |
 |:---------|:--------|:--------|-----:|-----:|-----:|:-----------|
@@ -18,3 +20,11 @@ hyperfine './lc-c < /tmp/test.txt'
 |perl      | perl    | 5.34.3  | 1.70 | 1.13 | 0.57 | [lc-perl.pl](lc-perl.pl) |
 |awk       | mawk    | 1.3.4   | 2.08 | 1.27 | 0.80 | [lc-awk.awk](lc-awk.awk) |
 |          | apple awk | ?     |90.06 | 87.90| 1.12 | [lc-awk.awk](lc-awk.awk) |
+
+### Elapsed time for pasting two files
+
+| Language | Runtime | Version | Elapsed time (s) | User time (s) | Sys time (s) | Code |
+|:---------|:--------|:--------|-----:|-----:|-----:|:-----------|
+|JavaScript| k8      | 1.0     | 4.89 | 4.22 | 0.61 | [paste-k8.js](paste-k8.js) |
+|          | node    | 21.5.0  | 29.10| 26.08| 5.10 | [paste-Dimava.mjs](paste-Dimava.mjs) |
+|          | node    | 21.5.0  | 65.04| 58.04| 7.81 | [paste-nr2.js](paste-nr2.js) |
